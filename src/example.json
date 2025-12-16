@@ -1,0 +1,49 @@
+{
+    "cif": "B0000123",
+    "direccion": "C/ Benajete 12",
+    "nombre": "Aislamientos Serrano",
+    "fcts": [{
+        "apto":"true",
+        "fecha_inicio": "2025-01-12",
+        "fecha_fin": "2026-01-12",
+        "alumnos": [{
+            "dni": "5262616S",
+            "nombre": "Pepito Perez",
+            "fecha_nac": "1999-02-03",
+            "telefonos": {
+                "Casa": "600123456",
+                "Trabajo": "722658999"
+            }
+        },{
+            "dni": "4262616S",
+            "nombre": "Juanito Perez",
+            "fecha_nac": "1999-02-03",
+            "telefonos": {
+                "Casa": "600123456",
+                "Trabajo": "722658999"
+            }
+        }]
+    },
+    {
+        "apto":"true",
+        "fecha_inicio": "2025-01-25",
+        "fecha_fin": "2026-01-30",
+        "alumnos": [{
+            "dni": "5262616S",
+            "nombre": "Pepito Perez",
+            "fecha_nac": "1999-02-03",
+            "telefonos": {
+                "Casa": "600123456",
+                "Trabajo": "722658999"
+            }
+        },{
+            "dni": "4262616S",
+            "nombre": "Juanito Perez",
+            "fecha_nac": "1999-02-03",
+            "telefonos": {
+                "Casa": "600123456",
+                "Trabajo": "722658999"
+            }
+        }]
+    }]
+}
