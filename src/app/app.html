@@ -264,7 +264,7 @@
                     <td>{{fct.fecha_inicio | date: "dd/MM/yyyy"}}</td>
                     <td>{{fct.fecha_fin | date: "dd/MM/yyyy"}}</td>
                     <td class="apto">{{fct.apto? "APTO":"NO APTO"}}</td>
-                    <td> <a (click)="eliminar(alumno)"  style="color:red">X</a> </td>
+                    <td> <a (click)="eliminar(alumno, $event)"  style="color:red">X</a> </td>
                   </tr>
                 }
               }
@@ -292,7 +292,7 @@
           <input name="apto" type="checkbox" [(ngModel)]="apto" />
           Apto
         </label>
-        <button type="button" (click)="nueva_practica()">Nueva práctica</button>
+        <button type="button" (click)="nueva_practica($event)">Nueva práctica</button>
       </form>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>

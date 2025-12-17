@@ -40,7 +40,9 @@ export class App implements OnInit{
 
   }
 
-  public nueva_practica(){
+  public nueva_practica(event: Event){
+
+    event.preventDefault();
 
     let alumno_new: Alumno = new Alumno("", this.nombre, new Date(), new Map<String,String>());
     let fct: Fct = new Fct(this.apto, this.fecha_inicio, this.fecha_fin, [alumno_new]);
@@ -49,7 +51,9 @@ export class App implements OnInit{
   }
 
   //Pulir este metodo
-  public eliminar(alumnoABorrar: Alumno){
+  public eliminar(alumnoABorrar: Alumno, event: Event){
+
+    event?.preventDefault();
     if (!this.empresa || !this.empresa.fcts) return;
 
   for (const fct of this.empresa.fcts) {
