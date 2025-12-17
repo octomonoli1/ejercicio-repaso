@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { Empresa } from './models/empresa';
 import { Fct } from './models/fct';
 import { Alumno } from './models/alumno';
-import { DatePipe } from '@angular/common';
+import { DatePipe, NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, DatePipe],
+  imports: [RouterOutlet, DatePipe, FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -15,6 +16,10 @@ export class App implements OnInit{
 
   protected readonly title = signal('ejercicio-repaso');
   public empresa: Empresa | null = null;
+  public nombre: string = "";
+  public fecha_inicio: Date = new Date();
+  public fecha_fin: Date = new Date();
+  public apto: boolean = false;
 
   ngOnInit(): void {
     this.iniciar_app();
@@ -33,5 +38,26 @@ export class App implements OnInit{
 
     this.empresa = new Empresa("B0000123", "C/ Benajete 12", "La Lola", [fct1, fct2]);
 
+  }
+
+  public nueva_practica(){
+
+    let alumno_new: Alumno = new Alumno("", this.nombre, new Date(), new Map<String,String>());
+    let fct: Fct = new Fct(this.apto, this.fecha_inicio, this.fecha_fin, [alumno_new]);
+    this.empresa?.fcts.push(fct);
+
+  }
+
+  //Pulir este metodo
+  public eliminar(alumnoABorrar: Alumno){
+    if(this.empresa){
+      for(let fct of this.empresa.fcts){
+        for(let i = 0; i < fct.alumnos.length; i++){
+          if(fct.alumnos[i].dni == alumnoABorrar.dni){
+            fct.alumnos.splice(i,1)
+          }
+        }
+      }
+    }
   }
 }

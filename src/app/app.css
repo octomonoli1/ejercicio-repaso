@@ -30,3 +30,66 @@
   font-weight: bold;
   color: #4caf50;
 }
+
+/* Contenedor del formulario */
+.form-practicas {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f7f9fc;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Labels y inputs */
+.form-practicas label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Inputs de texto y fecha */
+.form-practicas input[type="text"],
+.form-practicas input[type="date"] {
+  padding: 8px 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.form-practicas input[type="text"]:focus,
+.form-practicas input[type="date"]:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/* Checkbox */
+.checkbox-label {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+/* Botón */
+.form-practicas button {
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-practicas button:hover {
+  background-color: #45a049;
+}

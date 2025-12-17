@@ -253,6 +253,7 @@
                 <th>Fecha Inicio</th>
                 <th>Fecha Fin</th>
                 <th>Calificación</th>
+                <th>Acciones</th>
               </tr>
             </thead>
             <tbody>
@@ -263,6 +264,7 @@
                     <td>{{fct.fecha_inicio | date: "dd/MM/yyyy"}}</td>
                     <td>{{fct.fecha_fin | date: "dd/MM/yyyy"}}</td>
                     <td class="apto">{{fct.apto? "APTO":"NO APTO"}}</td>
+                    <td> <button (click)="eliminar(alumno)"  style="color:red">X</button> </td>
                   </tr>
                 }
               }
@@ -270,8 +272,29 @@
           </table>
         }
       </div>
-      
+      <form class="form-practicas">
+        <label>
+          Nombre alumno:
+          <input name="nombre" type="text" [(ngModel)]="nombre" />
+        </label>
 
+        <label>
+          Fecha inicio:
+          <input name="fecha_inicio" type="date" [(ngModel)]="fecha_inicio" />
+        </label>
+
+        <label>
+          Fecha fin:
+          <input name="fecha_fin" type="date" [(ngModel)]="fecha_fin" />
+        </label>
+
+        <label class="checkbox-label">
+          <input name="apto" type="checkbox" [(ngModel)]="apto" />
+          Apto
+        </label>
+
+        <button type="button" (click)="nueva_practica()">Nueva práctica</button>
+      </form>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
