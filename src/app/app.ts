@@ -50,14 +50,13 @@ export class App implements OnInit{
 
   //Pulir este metodo
   public eliminar(alumnoABorrar: Alumno){
-    if(this.empresa){
-      for(let fct of this.empresa.fcts){
-        for(let i = 0; i < fct.alumnos.length; i++){
-          if(fct.alumnos[i].dni == alumnoABorrar.dni){
-            fct.alumnos.splice(i,1)
-          }
-        }
-      }
+    if (!this.empresa || !this.empresa.fcts) return;
+
+  for (const fct of this.empresa.fcts) {
+    const index = fct.alumnos.findIndex(a => a.dni === alumnoABorrar.dni);
+    if (index !== -1) {
+      fct.alumnos.splice(index, 1); // Borra el alumno del array
     }
+  }
   }
 }
